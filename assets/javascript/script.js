@@ -6,7 +6,6 @@ var topics = ["Kate Upton", "Halsey", "Scarlett Johansson", "Megan Fox", "Taylor
 //Display Topic Buttons Function
 function topicButtons() {
 	$('#topicButtons').empty();
-
 	for (var i = 0; i < topics.length; i++) {
 		var newButton = $('<button>');
 		newButton.addClass('topic');
@@ -16,9 +15,6 @@ function topicButtons() {
 	}
 }
 topicButtons();
-
-//Event Listener on click
-$(document).on("click", ".topic", displayTopics);
 
 //AJAX Request for GIPHY API Function
 function displayTopics() {
@@ -41,7 +37,6 @@ function displayTopics() {
 			image.attr('data-state', 'still');
 			image.attr('animate-url', response.data[i].images.fixed_height.url);
 			image.attr('still-url', response.data[i].images.fixed_height_still.url);
-
 			divGIPHY.append(rating, image);
 			$('#gifs-appear-here').append(divGIPHY);
 		}
@@ -56,7 +51,6 @@ function displayTopics() {
 					$(this).attr("data-state", "still");
 				}
 		});
-		topicButtons();
 	});
 }
 
@@ -68,3 +62,6 @@ $("#addTopic").on("click", function(event) {
     $("#topic-input").val("");
     topicButtons();
 });
+
+//Page Event Listener on click
+$(document).on("click", ".topic", displayTopics);
