@@ -1,7 +1,7 @@
 // alert("connected");
 
 //Initial Topics Array
-var topics = ["Kate Upton", "Halsey", "Scarlett Johansson", "Megan Fox", "Taylor Swift", "Ariana Grande", "Kendall Jenner", "Blake Lively", "Jessica Alba"];
+var topics = ["Kate Upton", "Gigi Hadid", "Scarlett Johansson", "Megan Fox", "Taylor Swift", "Ariana Grande", "Kendall Jenner", "Blake Lively", "Jessica Alba"];
 
 //Display Topic Buttons Function
 function topicButtons() {
@@ -56,11 +56,11 @@ function displayTopics() {
 
 //Add Topic Button Function
 $("#addTopic").on("click", function(event) {
-    event.preventDefault();
-    var topic = $("#topic-input").val().trim();
-    topics.push(topic);
-    $("#topic-input").val("");
-    topicButtons();
+	event.preventDefault();
+	var topic = $("#topic-input").val().trim();
+	topics.push(topic);
+	$("#topic-input").val("");
+	topicButtons();
 });
 
 //Page Event Listener on click
